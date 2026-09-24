@@ -164,17 +164,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Header */
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: white;
-}
-
-header, section {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: white;
     padding-inline: 10vw;
 }
 
 .header-link {
+    list-style-type: none;
+    width: 100%;
     text-transform: uppercase;
     color: var(--link-color);
     font-weight: 600;
@@ -182,12 +181,12 @@ header, section {
     padding-block: 20px;
     display: flex;
     gap: 24px;
+    justify-content: flex-end;
     align-items: center;
-    list-style-type: none;
-}
 
-li.logo {
-    margin-right: auto;
+    & :first-child {
+        margin-right: auto;
+    }
 }
 
 li > a {
