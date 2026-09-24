@@ -209,6 +209,10 @@ li > a {
             background-color: #2C2830;
         }
     }
+
+    &.menu-icon {
+        display: none;
+    }
 }
 
 /* Sidebar styling */
@@ -259,6 +263,7 @@ li > a {
 .hero {
     display: flex;
     gap: 32px;
+    padding-inline: 10vw;
 
     /* Crazy BG */
     background-image: url("svg/right_hand_background.svg"), linear-gradient(to bottom, var(--hero-bg) 80%, white 20%);
@@ -308,8 +313,20 @@ h1 {
 /* Responsive design */
 
 @media screen and (max-width: 768px) {
+    li > a.menu-icon {
+        display: block;
+    }
+    .hideOnMobile {
+        display: none;
+    }
     .hero {
         flex-direction: column-reverse;
         padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .side-bar {
+        width: 100%;
     }
 }
