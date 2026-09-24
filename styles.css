@@ -161,6 +161,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "DM Serif Display", serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
 /* Header */
 
 header {
@@ -172,7 +180,6 @@ header {
 }
 
 .header-link {
-    list-style-type: none;
     width: 100%;
     text-transform: uppercase;
     color: var(--link-color);
@@ -190,7 +197,6 @@ header {
 }
 
 li > a {
-    text-decoration: none;
     line-height: 115%;
     color: inherit;
 
@@ -271,10 +277,6 @@ li > a {
     padding-top: 5vh;
     background-position: top right;
     background-size: 26%, 100%;
-
-    > div {
-        flex-basis: 50%;
-    }
 }
 
 .lt-hand-hero {
@@ -288,7 +290,7 @@ li > a {
 a.lt-hero-btn {
     color: white;
     border: 1px solid white;
-    padding: 10px;
+    padding: 8px 16px;;
 
     &:hover {
         background-color: white;
@@ -302,6 +304,7 @@ h1 {
     font-size: 3rem;
     margin-top: 60px;
     margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 
 .lt-hand-img {
@@ -313,15 +316,33 @@ h1 {
 /* Responsive design */
 
 @media screen and (max-width: 768px) {
+    /* header */
     li > a.menu-icon {
         display: block;
     }
     .hideOnMobile {
         display: none;
     }
+    
+    /* hero */
+    .rt-hand-hero img {
+        width: 100%;
+    }
     .hero {
         flex-direction: column-reverse;
         padding: 0;
+        background-image: url("svg/right_hand_background.svg");
+        background-repeat: no-repeat no-repeat;
+        background-color: var(--hero-bg);
+    }
+    .lt-hand-hero {
+        margin-bottom: 80px;
+        text-align: center;
+        padding-inline: 10vw;
+
+        svg {
+            display: none;
+        }
     }
 }
 
