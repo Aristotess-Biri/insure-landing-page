@@ -1,0 +1,255 @@
+/* Reset CSS by Amaka Ndukwu */
+
+/* making use of :where to allow for low specificity making it easy to override */
+
+html {
+    box-sizing: border-box;
+}
+/* 1. border-box for box model */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* 2. remove default margin 
+padding is optional but i do this because of lists*/
+
+:where(:not(dialog)) {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. great for in-page linking */
+@media(prefers-reduced-motion:no-preference) {
+    :where(html) {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 4. line height and text rendering improvement */
+:where(html) {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. ensure full viewport height */
+:where(html, body) {
+    min-block-size: 100%;
+}
+
+/* 6. improve line wrapping */
+:where(h1, h2, h3,
+    h4, h5, h6) {
+    text-wrap: balance;
+}
+
+:where(p) {
+    text-wrap: pretty;
+}
+
+:where(figure)>:where(figcaption) {
+    text-wrap: balance;
+}
+
+:where(p, h1, h2, h3,
+    h4, h5, h6) {
+    overflow-wrap: break-word;
+}
+
+
+
+/* 7. making media elements block-level */
+:where(img,
+    svg,
+    video,
+    canvas,
+    picture,
+    audio,
+    iframe,
+    embed,
+    object) {
+    display: block
+}
+
+:where(img, svg, video, canvas, picture) {
+    block-size: auto;
+    max-inline-size: 100%
+}
+
+/* 8. inherit font and letter spacing for form controls */
+:where(input,
+    button,
+    textarea,
+    select),
+:where(input[type=file])::-webkit-file-upload-button {
+    font: inherit;
+    letter-spacing: inherit
+}
+
+/* 9. textarea can only resized vertically and will grow to adjust its content */
+:where(textarea) {
+    resize: vertical;
+   field-sizing: content;
+}
+
+/* 10. table */
+:where(table) {
+    width: fit-content;
+    border-collapse: collapse;
+}
+
+:where(pre) {
+    direction: ltr;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    writing-mode: lr
+}
+
+:where(a[href],
+    area,
+    button,
+    input:not([type=text],
+        [type=email],
+        [type=number],
+        [type=password],
+        [type=""],
+        [type=tel],
+        [type=url]),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*="-"],
+        pre)) {
+    cursor: pointer
+}
+
+/*  this will disable additional non-standard gestures such as double-tap to zoom*/
+:where(a[href],
+    area,
+    button,
+    input,
+    label[for],
+    select,
+    summary,
+    textarea,
+    [tabindex]:not([tabindex*="-"])) {
+    touch-action: manipulation
+}
+
+/* Best practice box-sizing: The "inherit" method */
+html {
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Custom Styling */
+:root{
+    --hero-bg: #2D2641;
+    --link-color: #837D88;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "DM Serif Display", serif;
+}
+
+a {
+    text-decoration: none;
+    line-height: 115%;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+}
+
+header, section {
+    padding-inline: 10vw;
+}
+
+.header-link {
+    text-transform: uppercase;
+    color: var(--link-color);
+    font-weight: 600;
+    font-size: 14px;
+    padding-block: 20px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    list-style-type: none;
+}
+
+li.logo {
+    margin-right: auto;
+}
+
+.header-link-btn {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.hero {
+    display: flex;
+    gap: 32px;
+
+    /* Crazy BG */
+    background-image: url("svg/right_hand_background.svg"), linear-gradient(to bottom, var(--hero-bg) 80%, white 20%);
+    background-repeat: no-repeat no-repeat;
+    padding-top: 5vh;
+    background-position: top right;
+    background-size: 26%, 100%;
+
+    > div {
+        flex-basis: 50%;
+    }
+}
+
+.lt-hand-hero {
+    color: white;
+
+    > p {
+        margin-bottom: 20px;
+    }
+}
+
+a.lt-hero-btn {
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+
+    &:hover {
+        background-color: white;
+        color: var(--hero-bg);
+        font-weight: bold;
+    }
+}
+
+h1 {
+    line-height: 90%;
+    font-size: 3rem;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.lt-hand-img {
+    /* position: absolute; */
+    top: 60%;
+    left: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+}
