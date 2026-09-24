@@ -228,10 +228,20 @@ li > a {
     color: var(--link-color);
     font-weight: 600;
     font-size: 14px;
-    display: none;
+    display: flex;
+    /* hide sidebar from screen */
+    transform: translateX(100%);
+    visibility: hidden;  /* Hides sidebar from screen readers and tabbing */
     gap: 24px;
     flex-direction: column;
     align-items: center;
+    /* Animate transform and visibility smoothly */
+    transition: transform 0.3s ease, visibility 0.3s ease;
+
+    &.active {
+        transform: translateX(0%);
+        visibility: visible; /* shows sidebar to eyes and screen readers */
+    }
 
     a {
         color: #2C2830;
