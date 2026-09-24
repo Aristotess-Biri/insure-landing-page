@@ -161,10 +161,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "DM Serif Display", serif;
 }
 
-a {
-    text-decoration: none;
-    line-height: 115%;
-}
+/* Header */
 
 header {
   position: sticky;
@@ -193,10 +190,29 @@ li.logo {
     margin-right: auto;
 }
 
-.header-link-btn {
-    border: 1px solid black;
-    padding: 10px;
+li > a {
+    text-decoration: none;
+    line-height: 115%;
+    color: inherit;
+
+    &:hover {
+        color: #2C2830;
+    }
+
+    &.header-link-btn {
+        border: 1.5px solid #2C2830;
+        padding: 8px 16px;
+        color: #2C2830;
+        transition: background-color 0.18s;
+
+        &:hover {
+            color: white;
+            background-color: #2C2830;
+        }
+    }
 }
+
+/* Hero */
 
 .hero {
     display: flex;
@@ -246,6 +262,8 @@ h1 {
     top: 60%;
     left: 0;
 }
+
+/* Responsive design */
 
 @media screen and (max-width: 768px) {
     .hero {
