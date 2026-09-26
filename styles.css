@@ -204,6 +204,11 @@ header {
 li > a {
     line-height: 115%;
     color: inherit;
+    font-weight: 700;
+    font-style: bold;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
 
     &:hover {
         color: #2C2830;
