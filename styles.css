@@ -142,7 +142,6 @@ padding is optional but i do this because of lists*/
 /* Best practice box-sizing: The "inherit" method */
 html {
   box-sizing: border-box;
-  font-family: "Karla", sans-serif; 
 }
 
 *,
@@ -159,6 +158,12 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "DM Serif Display", serif;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    line-height: 165%;
+    font-weight: 400;
 }
 
 a {
@@ -226,7 +231,7 @@ li > a {
     position: fixed;
     top: 0;
     right: 0;
-    width: 250px;
+    width: 50vw;
     height: 100vh;
     z-index: 9999;
     padding-top: 20px;
@@ -270,6 +275,8 @@ li > a {
     display: flex;
     gap: 32px;
     padding-inline: 10vw;
+    justify-content: space-between;
+    position: relative;
 
     /* Crazy BG */
     background-image: url("svg/right_hand_background.svg"), linear-gradient(to bottom, var(--hero-bg) 80%, white 20%);
@@ -280,16 +287,36 @@ li > a {
 }
 
 .lt-hand-hero {
-    color: white;
+    color: #ffffff;
+    padding-bottom: 25%;
 
-    > p {
+    svg {
+        padding-bottom: 60px;
+    }
+
+    p {
         margin-bottom: 20px;
+    }
+    flex: 1;
+    z-index: 2;
+}
+
+.rt-hand-hero {
+    flex: 1;
+    > img {
+        width: 100%;
+        height: auto;
     }
 }
 
 a.lt-hero-btn {
     color: white;
-    border: 1px solid white;
+    font-weight: 700;
+    font-style: bold;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1.5px solid white;
     padding: 8px 16px;;
 
     &:hover {
@@ -302,15 +329,19 @@ a.lt-hero-btn {
 h1 {
     line-height: 90%;
     font-size: 3rem;
-    margin-top: 60px;
+    font-weight: 400;
     margin-bottom: 20px;
-    letter-spacing: 0.5px;
+    letter-spacing: -1px;
 }
 
 .lt-hand-img {
-    /* position: absolute; */
-    top: 60%;
+    position: absolute;
+    top: 50%;
     left: 0;
+}
+
+.rt-mobile-img {
+    display: none;
 }
 
 /* Responsive design */
@@ -334,19 +365,41 @@ h1 {
         background-image: url("svg/right_hand_background.svg");
         background-repeat: no-repeat no-repeat;
         background-color: var(--hero-bg);
+        gap: 0px;
+        position: static;
     }
     .lt-hand-hero {
-        margin-bottom: 80px;
         text-align: center;
         padding-inline: 10vw;
+        padding-block: 80px;
+        position: relative;
 
         svg {
             display: none;
         }
     }
+    .lt-hand-img {
+        top: -60%;
+        z-index: 0;
+    }
+    h1, p {
+        position: relative;
+        z-index: 3;
+    }
+    .rt-hand-hero {
+        position: relative;
+        z-index: 3;
+    }
+    .rt-mobile-img {
+        display: block;
+        position: absolute;
+        top: 72%;
+        right: 0;
+        z-index: 0;
+    }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     .side-bar {
         width: 100%;
     }
