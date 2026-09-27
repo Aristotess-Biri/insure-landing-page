@@ -346,6 +346,7 @@ a.main-btn {
     text-transform: uppercase;
     border: 1.5px solid var(--white);
     padding: var(--btn-padding);
+    white-space: nowrap;
 
     &:hover {
         background-color: var(--white);
@@ -415,6 +416,33 @@ h1 {
     gap: 2rem;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+/* CTA */
+.cta {
+    background-color: var(--white);
+    margin-top: 150px;
+    padding-inline: 10vw;
+}
+
+.cta__container {
+    padding: 69px 80.5px;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(svg/right_hand_background.svg);
+    background-repeat: no-repeat no-repeat;
+    background-position: right;
+    background-color: var(--purple-bg);
+}
+
+.cta__heading {
+    color: var(--white);
+    font-size: var(--font-cta);
+    line-height: 100%;
+    letter-spacing: -0.8px;
+    max-width: 20ch;
 }
 
 /* Responsive design */
@@ -487,6 +515,16 @@ h1 {
         align-items: center;
      }
      .features__heading, .features__item-body, .features__item-heading {
+        text-align: center;
+     }
+
+     /* CTA */
+     .cta__container {
+        flex-direction: column;
+        background-position:  top -180px right -180px;
+     }
+     .cta__heading {
+        max-width: none;
         text-align: center;
      }
 }
