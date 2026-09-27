@@ -213,7 +213,7 @@ header {
     text-transform: uppercase;
     color: var(--gray-text);
     font-weight: 600;
-    font-size: 14px;
+    font-size: var(--font-small);
     padding-block: 20px;
     display: flex;
     gap: 24px;
@@ -272,7 +272,7 @@ li > a {
     list-style-type: none;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 14px;
+    font-size: var(--font-small);
     display: flex;
     /* hide sidebar from screen */
     transform: translateX(100%);
@@ -343,6 +343,7 @@ a.lt-hero-btn {
     color: var(--white);
     font-weight: 700;
     font-style: bold;
+    font-size: var(--font-small);
     letter-spacing: 1.5px;
     text-align: center;
     text-transform: uppercase;
