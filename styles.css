@@ -174,6 +174,7 @@ html {
     --logo-width: 7rem;
 
     /* Spacing */
+    --btn-padding: 0.78rem 1.78rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -220,8 +221,8 @@ header {
     justify-content: flex-end;
     align-items: center;
 
-    & :first-child {
-        width: 7rem;
+    & > .logo {
+        width: var(--logo-width);
         height: auto;
         margin-right: auto;
     }
@@ -239,21 +240,21 @@ li > a {
     &:hover {
         color: var(--gray-text-dark);
     }
+}
 
-    &.header-link-btn {
-        border: 1.5px solid var(--purple-bg);
-        padding: 8px 16px;
-        color: var(--purple-bg);
-        transition: background-color 0.18s;
-
-        &:hover {
-            color: var(--white);
-            background-color: var(--purple-bg);
-        }
-    }
-
-    &.menu-icon {
+.menu-icon {
         display: none;
+}
+
+.header-link-btn {
+    border: 1.5px solid var(--purple-bg);
+    padding: var(--btn-padding);
+    color: var(--purple-bg);
+    transition: background-color 0.18s;
+
+    &:hover {
+        color: var(--white);
+        background-color: var(--purple-bg);
     }
 }
 
@@ -272,7 +273,7 @@ li > a {
     list-style-type: none;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: var(--font-small);
+    font-size: var(--font-body);
     display: flex;
     /* hide sidebar from screen */
     transform: translateX(100%);
@@ -293,7 +294,7 @@ li > a {
         &:hover {
             color: var(--white);
             background-color: var(--purple-bg);
-            padding: 8px 16px;
+            padding: var(--btn-padding);
             transition: background-color 0.18s;
         }
     }
@@ -307,11 +308,11 @@ li > a {
     padding-inline: 10vw;
     justify-content: space-between;
     position: relative;
+    padding-top: 105px;
 
     /* Crazy BG */
     background-image: url("svg/right_hand_background.svg"), linear-gradient(to bottom, var(--purple-bg) 80%, var(--white) 20%);
     background-repeat: no-repeat no-repeat;
-    padding-top: 5vh;
     background-position: top right;
     background-size: 26%, 100%;
 }
@@ -320,12 +321,8 @@ li > a {
     color: var(--white);
     padding-bottom: 25%;
 
-    svg {
-        padding-bottom: 60px;
-    }
-
     p {
-        margin-bottom: 20px;
+        margin-bottom: 1.5rem;
     }
     flex: 1;
     z-index: 2;
@@ -339,7 +336,7 @@ li > a {
     }
 }
 
-a.lt-hero-btn {
+a.main-btn {
     color: var(--white);
     font-weight: 700;
     font-style: bold;
@@ -348,7 +345,7 @@ a.lt-hero-btn {
     text-align: center;
     text-transform: uppercase;
     border: 1.5px solid var(--white);
-    padding: 8px 16px;
+    padding: var(--btn-padding);
 
     &:hover {
         background-color: var(--white);
@@ -359,7 +356,8 @@ a.lt-hero-btn {
 h1 {
     line-height: 90%;
     font-size: var(--font-h1);
-    margin-bottom: 20px;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
     letter-spacing: -1px;
 }
 
@@ -375,8 +373,9 @@ h1 {
 
 /* Features section */
 .features {
+    background-color: var(--white);
     padding-inline: 10vw;
-    margin-top: 80px;
+    margin-top: 150px;
 }
 
 .features__heading {
@@ -390,8 +389,8 @@ h1 {
 
 .features__item-icon svg {
     background-color: var(--gray-icon);
-    width: 5.5rem;
-    height: 5.5rem;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
     border-radius: 50%;
     padding: 1.5rem;
 }
@@ -422,7 +421,7 @@ h1 {
 
 @media screen and (max-width: 768px) {
     /* header */
-    li > a.menu-icon {
+    .menu-icon {
         display: block;
     }
     .hideOnMobile {
