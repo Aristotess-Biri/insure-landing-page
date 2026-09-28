@@ -320,12 +320,18 @@ li > a {
 .lt-hand-hero {
     color: var(--white);
     padding-bottom: 25%;
+    flex: 1;
+    z-index: 2;
 
     p {
         margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
     }
-    flex: 1;
-    z-index: 2;
+    .main-btn {
+        position: relative;
+        z-index: 2;
+    }
 }
 
 .rt-hand-hero {
