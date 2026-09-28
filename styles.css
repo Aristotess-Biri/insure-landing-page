@@ -91,7 +91,7 @@ padding is optional but i do this because of lists*/
 /* 9. textarea can only resized vertically and will grow to adjust its content */
 :where(textarea) {
     resize: vertical;
-   field-sizing: content;
+    field-sizing: content;
 }
 
 /* 10. table */
@@ -105,7 +105,7 @@ padding is optional but i do this because of lists*/
     max-inline-size: max-content;
     min-inline-size: 0;
     white-space: pre;
-    writing-mode: lr
+    writing-mode: vertical-lr;
 }
 
 :where(a[href],
@@ -232,7 +232,6 @@ li > a {
     line-height: 115%;
     color: inherit;
     font-weight: 700;
-    font-style: bold;
     letter-spacing: 1.5px;
     text-align: center;
     text-transform: uppercase;
@@ -345,7 +344,6 @@ li > a {
 a.main-btn {
     color: var(--white);
     font-weight: 700;
-    font-style: bold;
     font-size: var(--font-small);
     letter-spacing: 1.5px;
     text-align: center;
@@ -516,7 +514,6 @@ hr {
     color: var(--gray-text);
     font-size: var(--font-small);
     font-weight: 700;
-    font-style: bold;
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
