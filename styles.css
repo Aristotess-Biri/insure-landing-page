@@ -170,7 +170,7 @@ html {
 
     /* Other sizing */
     --icon-lg: 5.375rem;
-    --icon-sm: 0.8125rem;
+    --icon-sm: 1.5rem;
     --logo-width: 7rem;
 
     /* Spacing */
@@ -443,6 +443,51 @@ h1 {
     line-height: 100%;
     letter-spacing: -0.8px;
     max-width: 20ch;
+}
+
+/* Footer */
+.footer {
+    padding-inline: 10vw;
+    margin-top: 150px;
+    background-color: var(--off-white);
+    background-image: url(svg/footer-top.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-block: 82px;
+}
+
+.footer__svg {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer__logo {
+    margin-right: auto;
+    width: var(--logo-width);
+    height: auto;
+}
+
+.footer__icon {
+    height: var(--icon-sm);
+    width: auto;
+}
+
+hr {
+    color: var(--gray-text);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer__links {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.nav__heading {
+    font-family: "Karla", sans-serif;
+    font-size: var(--font-small);
+    text-transform: uppercase;
 }
 
 /* Responsive design */
